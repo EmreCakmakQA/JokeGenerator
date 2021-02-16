@@ -1,0 +1,48 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 180px;
+}
+
+#c{
+position: relative;    
+}
+
+#buttons{
+    display:inline-flex;
+    font-size: 30px;
+    position:relative;
+    left: 50%;
+    transform: translate(-50%, 10%);
+}
+
+.btn {
+    padding: 2px;
+    margin: 5px;
+    font-size: large;
+    border-radius: 10px;
+    text-align: center;
+    width: 110px;
+}
+
+.btn:hover{
+    background-color: white;
+    color: black;
+}
+
+#display {    
+    font-size: 45px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.title {
+    font-size: 45px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.node{
+    text-align: center;
+    margin: 2px;
+}
+
