@@ -4,8 +4,14 @@ const buttons = document.getElementsByTagName("button");
 
 // Click Event
 document.addEventListener("click", (event) => {
-    let type = event.target.id;
-    getData(type);
+
+    console.log(event.target.id)
+    if (event.target.id == "typeOfJoke") {
+        getData("Dark")
+    } else {
+        let type = event.target.id;
+        getData(type);
+    }
 })
 
 // Keypress Event
@@ -13,22 +19,22 @@ document.addEventListener("keypress", (e) => {
     console.log(e.key, typeof (e.key))
     switch (e.key) {
         case "1":
-            getData("Dark")
+            handlePress("Dark", "1")
             break;
         case "2":
-            getData("Programming")
+            handlePress("Programming", "2")
             break;
         case "3":
-            getData("Miscellaneous")
+            handlePress("Miscellaneous", "3")
             break;
         case "4":
-            getData("Pun")
+            handlePress("Pun", "4")
             break;
         case "5":
-            getData("Spooky")
+            handlePress("Spooky", "5")
             break;
         case "6":
-            getData("Christmas")
+            handlePress("Christmas", "6")
             break;
         default:
             break;
@@ -47,7 +53,7 @@ function getData(type) {
 
             if (data.type == "twopart") {
                 let d = document.createElement("div")
-                d.setAttribute("class", "animate__animated animate__backInRight")
+                d.setAttribute("class", "animate__animated animate__backInRight animate__faster 500ms")
 
                 let setup = document.createElement("p");
                 let delivery = document.createElement("p")
@@ -74,5 +80,16 @@ function getData(type) {
         );
 }
 
+// Handles Colour Change For Number
+function colorPress(num) {
+    document.getElementById("num" + num).style.color = "white"
+    setTimeout(() => {
+        document.getElementById("num" + num).style.color = "black"
+    }, 200)
+}
 
-
+// Handles Color And Data For Key Press
+function handlePress(type, num) {
+    colorPress(num)
+    getData(type)
+}
